@@ -1,0 +1,22 @@
+.Profile {
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.Profile .PhotoandSummary {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Profile .UserContent {
+    display: flex;
+    justify-content: center;
+}
+
+.Profile .UserContent Link {
+    text-decoration: none;
+}

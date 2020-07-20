@@ -1,0 +1,20 @@
+.Profilepic {
+    height: 10rem;
+    width: 10rem;
+}
+
+.Profilepic .Image {
+    width: 100%;
+    height: 100%;
+}
+
+.Profilepic .Image:hover {
+    cursor: pointer;
+}
+
+.Profilepic img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}

@@ -1,0 +1,52 @@
+.Auth {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+}
+
+.FormContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    background-color: white;
+    padding: 2rem;
+    position: relative;
+    height: 15rem;
+    border: 1px solid black;
+}
+
+.FormContainer form {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.FormContainer form input {
+    margin: 0.2rem 0;
+    width: 100%;
+}
+
+.FormContainer form button {
+    width: 100%;
+    background-color: rgb(9, 156, 224);
+    border: 0 ;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+}
+
+.FormContainer form button:hover {
+    cursor: pointer;
+}
+
+.FormContainer form .text {
+    font-family: 'Gloria Hallelujah' ,cursive;
+}
