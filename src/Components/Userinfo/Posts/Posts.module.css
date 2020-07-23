@@ -1,0 +1,16 @@
+.Posts {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Posts .Mypost {
+    width: 20rem;
+    margin: 0.5rem;
+}
+
+.Posts .Mypost .Image {
+    width: 20rem;
+}
+

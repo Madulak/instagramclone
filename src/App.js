@@ -8,9 +8,13 @@ import { Switch, Route, Redirect } from 'react-router';
 
 import Signup from './Components/Auth/Signup/Signup';
 import Login from './Components/Auth/Login/Login';
-import Home from './Container/Container';
 
-import Profile from './Container/Profile/Profile';
+import Profile from './Components/Userinfo/Posts/Posts';
+import Instagramtv from './Components/Userinfo/InstagramTV/Instagramtv';
+import Upload from './Components/Userinfo/UploadPost/uploadpost';
+// import Profile from './Container/Profile/Profile';
+import Detailedpost from './Components/Userinfo/Detailedpost/Detailedpost';
+import Timeline from './Components/Userinfo/Timeline/Timeline';
 
 const App = () => {
 
@@ -21,10 +25,13 @@ const App = () => {
       
       <Switch>
           {isAuth ? <Fragment>
-            <Container>
-            <Route exact path="/:id" component={Profile} />
-            <Route exact path="/" component={Home}/> 
-            </Container>
+            {/* <Container> */}
+              <Route exact path="/" component={Timeline} />
+              <Route exact path="/upload" component={Upload} />
+              <Route exact path="/post/:id" component={Detailedpost} />
+              <Route exact path="/:id/channel" component={Instagramtv} />
+              <Route exact path="/:id" component={Profile} />
+            {/* </Container> */}
           </Fragment> : 
             <Fragment>
               <Redirect from="/" to="/login" />

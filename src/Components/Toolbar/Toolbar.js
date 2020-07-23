@@ -1,6 +1,19 @@
 import React, { useState, useContext } from 'react';
 import classes from './Toolbar.module.css';
-import { Home, HomeOutlined, FavoriteBorder, ExploreOutlined, SearchRounded, Favorite, Explore, Send, SendOutlined, AccountCircleOutlined, AccountCircle } from '@material-ui/icons';
+// import {    } from '@material-ui/icons';
+import Home from  '@material-ui/icons/Home';
+import HomeOutlined from '@material-ui/icons/HomeOutlined';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import ExploreOutlined from '@material-ui/icons/ExploreOutlined';
+import SearchRounded from '@material-ui/icons/SearchRounded';
+import Favorite from '@material-ui/icons/Favorite';
+import Explore from '@material-ui/icons/Explore';
+import Send from '@material-ui/icons/Send';
+import SendOutlined from '@material-ui/icons/SendOutlined';
+import AccountCircleOutlined from '@material-ui/icons/AccountCircleOutlined';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import CloudUpload from '@material-ui/icons/CloudUpload';
+
 import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../../context/context'
@@ -17,7 +30,6 @@ const toolbar = React.memo((props) => {
     const [explorebutton, setExporebutton] = useState(false);
     const [directbutton, setDirectbutton] = useState(false);
     const [accountbutton, setAccountbutton] = useState(false);
-    
     
     
     let widthinput;
@@ -126,8 +138,11 @@ const toolbar = React.memo((props) => {
                 <Link to={"/"+username}>{accountbutton === false ? <AccountCircleOutlined onClick={account} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} />: 
                                     <AccountCircle onClick={account} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</Link>
 
-            
+                <Link to="/upload" ><CloudUpload  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} /></Link>
+
+
             </div>
+                
         </div>
     );
 })

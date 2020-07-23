@@ -1,0 +1,13 @@
+.Detailedpost {
+    display: flex;
+    max-width: 80vw;
+    max-height: 100vh;
+}
+
+.Detailedpost .PostImage {
+    width: 65%;
+}
+
+.Detailedpost img {
+    width: 100%;
+}

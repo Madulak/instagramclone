@@ -10,8 +10,12 @@ const summary = React.memo((props) => {
     return (
         <div className={classes.Summary}>
             <div className={classes.Username}>
-                <p className={classes.Usernametext}> {props.username} </p>
-                <p><button className={classes.Link} to={`/${authContext.username}/edit`} >Edit Profile</button></p>
+                <div>
+                    <p className={classes.Usernametext}> {props.username} </p>
+                </div>
+                <div>
+                    <Link to={`/${authContext.username}/edit`} >Edit Profile</Link>
+                </div>
             </div>
             <div className={classes.Post}>
                 <p>{props.posts} posts</p>

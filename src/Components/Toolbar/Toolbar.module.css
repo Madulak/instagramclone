@@ -9,7 +9,7 @@
     height: 3rem;
     border-bottom: 1px rgb(218, 218, 218) solid;
     background-color: white;
-    
+    z-index: 900;
 }
 
 .Instagram {

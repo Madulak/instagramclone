@@ -1,8 +1,9 @@
 .Profile {
-    width: 70%;
+    width: 80%;
     justify-content: center;
     align-items: center;
     margin: auto;
+    height: 100%;
 }
 
 .Profile .PhotoandSummary {
@@ -15,8 +16,16 @@
 .Profile .UserContent {
     display: flex;
     justify-content: center;
+    margin: 0 5px;
 }
 
 .Profile .UserContent Link {
     text-decoration: none;
+}
+
+.Profile .UserMedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

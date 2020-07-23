@@ -9,7 +9,7 @@
     margin: 0;
     height: 100%;
     width: 100%;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .Summary .Post {
@@ -27,7 +27,7 @@
 
 .Summary .Usernametext {
     font-size: 1.5rem;
-    background-color: red;
+    /* background-color: red; */
     padding: 0;
     margin: 0 10px;
 }
