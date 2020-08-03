@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import classes from './Posts.module.css';
-import Profile from '../../../Container/Profile/Profile';
+import classes from './Explore.module.css';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -10,24 +9,25 @@ import Container from '../../../Container/Container';
 const posts = React.memo((props) => {
 
     const id = props.match.params.id
-    const [userpost, setUserpost] = useState([]);
+    const [data, setData] = useState([]);
     
     useEffect(() => {
-        Axios.get('http://localhost:8080/user/'+id)
+        Axios.get('http://localhost:8080/explore')
             .then(response => {
-                setUserpost(response.data.data.myposts);
+                setData(response.data.data);
+                console.log(response.data.data);
             })
             .catch(err => {
                 console.log(err);
             })
+            document.title = 'Instagram Clone'
     },[id])
 
     return (
         <Container>
-            <Profile id={id}>
                 <div className={classes.Posts}>
                     
-                    {userpost.map(ig => (
+                    {data.map(ig => (
                         <Link key={ig._id} to={"/post/"+ig._id}>
                             <div  className={classes.Mypost}>
                                 <img className={classes.Image} src={"http://localhost:8080/"+ig.mediaUrl} alt={ig.postText} />
@@ -35,7 +35,7 @@ const posts = React.memo((props) => {
                         </Link>
                     ))}
                 </div>
-            </Profile>
+            
         </Container>
     );
 })

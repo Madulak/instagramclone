@@ -1,13 +1,47 @@
 .Detailedpost {
     display: flex;
-    max-width: 80vw;
-    max-height: 100vh;
+    position: relative;
+    max-width: 65vw;
+    max-height: 95vh;
+}
+
+.Detailedpost .PostContent {
+    width: 40%;
+}
+
+.Detailedpost .PostContent .postCreator {
+    height: 3.5rem;
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+    overflow: hidden;
+}
+
+.Detailedpost .PostContent .postCreator .postCreatorImage {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+.Detailedpost .PostContent .postCreator img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(211, 153, 211);
+    border-radius: 50%;
 }
 
 .Detailedpost .PostImage {
-    width: 65%;
+    width: 60%;
+    box-sizing: border-box;
+    
 }
 
-.Detailedpost img {
+.Detailedpost .PostImage img {
     width: 100%;
+    height: 100%;
+    margin-bottom: -5px;
+    object-fit: cover;
 }

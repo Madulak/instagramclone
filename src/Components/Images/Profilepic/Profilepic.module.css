@@ -1,17 +1,25 @@
 .Profilepic {
     height: 10rem;
     width: 10rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 50%;
 }
 
 .Profilepic .Image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     text-align: center;
+    font-size: 2rem;
+    background-color: rgb(206, 160, 206);
 }
 
-.Profilepic .Image:hover {
+/* .Profilepic .Image:hover {
     cursor: pointer;
-}
+} */
 
 .Profilepic img {
     object-fit: cover;
@@ -21,4 +29,22 @@
     text-align: center;
     display: flex;
     align-items: center;
+}
+
+.Profilepic .ImageUploader {
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    margin-top: 80px;
+    opacity: 0;
+    object-fit: cover;
+    margin: 0;
+}
+
+.Profilepic:hover .ImageUploader {
+    opacity: 1;
 }

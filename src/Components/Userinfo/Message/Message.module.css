@@ -1,0 +1,7 @@
+.Message {
+    height: 92vh;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}

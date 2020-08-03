@@ -29,10 +29,11 @@ const auth = React.memo(() => {
         setPasssword('');
         setConfirm('');
     }
-
+    document.title = 'Signup Instagram Clone'
     return (
         <div className={classes.Auth}>
             <div className={classes.FormContainer}>
+                <h3>Instagram Signup</h3>
                 <form onSubmit={signupHandler}>
                     <input type="text" placeholder="username" value={username} onChange={(event) => setUsername(event.target.value)} />
                     <input type="email" placeholder="email" value={email} onChange={(event) => setEmail(event.target.value)} />

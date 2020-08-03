@@ -5,7 +5,7 @@ import classes from './Backdrop.module.css';
 const backdrop = (props) => {
 
     return (
-        <div onClick={props.disable} className={classes.Backdrop}>
+        <div style={props.style} onClick={props.disable} className={classes.Backdrop}>
             {props.children}
         </div>
     );

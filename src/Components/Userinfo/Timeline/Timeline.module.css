@@ -1,3 +1,73 @@
 .Timeline {
-    min-height: 80vh;
+    width: 45%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.Timeline .postCreator {
+    display: flex;
+    height: 3.5rem;
+    padding: 10px;
+}
+
+.Timeline .postCreator .Image {
+    width: 3.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(238, 176, 238);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.Timeline .postCreator .UserName {
+    height: 100%;
+}
+
+.TimelinePost {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    margin: 1rem;
+}
+
+.TimelinePost img {
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 50rem;
+    object-fit: cover;
+}
+
+.TimelinePost .Form {
+    border-top: 1px gray solid;
+    padding: 0 1rem
+}
+
+.TimelinePost .Form input {
+    width: 90%;
+    border: 0 solid;
+    padding: 1rem 0;
+}
+
+.TimelinePost .Form button {
+    background-color: transparent;
+    border: 0;
+    width: 10%;
+}
+
+.TimelinePost .Reactions {
+    padding: 0rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.TimelinePost span {
+    font-weight: bold;
+    margin-right: 0.5rem;
 }

@@ -1,6 +1,6 @@
 import React, { useContext, Fragment } from 'react';
 
-import Container from './Container/Container';
+// import Container from './Container/Container';
 // import Auth from './Components/Auth/Signup/Signup';
 
 import { AuthContext } from './context/context';
@@ -15,6 +15,9 @@ import Upload from './Components/Userinfo/UploadPost/uploadpost';
 // import Profile from './Container/Profile/Profile';
 import Detailedpost from './Components/Userinfo/Detailedpost/Detailedpost';
 import Timeline from './Components/Userinfo/Timeline/Timeline';
+import Explore from './Components/Userinfo/Explore/Explore';
+import Message from './Components/Userinfo/Message/Message';
+import Notification from './Components/Userinfo/Notification/Notification';
 
 const App = () => {
 
@@ -26,17 +29,20 @@ const App = () => {
       <Switch>
           {isAuth ? <Fragment>
             {/* <Container> */}
-              <Route exact path="/" component={Timeline} />
-              <Route exact path="/upload" component={Upload} />
-              <Route exact path="/post/:id" component={Detailedpost} />
+              <Route exact path="/explore/instagram" component={Explore} />
+              <Route exact path="/direct/messages" component={Message} />
+              <Route exact path="/activity/notifications" component={Notification} />
               <Route exact path="/:id/channel" component={Instagramtv} />
               <Route exact path="/:id" component={Profile} />
+              <Route exact path="/" component={Timeline} />
+              <Route exact path="/:id/upload" component={Upload} />
+              <Route exact path="/post/:id" component={Detailedpost} />
             {/* </Container> */}
           </Fragment> : 
             <Fragment>
               <Redirect from="/" to="/login" />
-            <Route exact path="/signup" component={Signup}/>
-            <Route exact path="/login" component={Login}/>
+              <Route exact path="/signup" component={Signup}/>
+              <Route exact path="/login" component={Login}/>
             </Fragment>
           }
            

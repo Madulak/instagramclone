@@ -3,6 +3,9 @@
     position: relative;
     flex-wrap: wrap;
     justify-content: flex-start;
+    width: 75%;
+    margin: auto;
+    padding: 2rem 0;
 }
 
 .Posts .Mypost {
@@ -19,6 +22,4 @@
 .Posts .Mypost img {
     object-fit: cover;
 }
-
-
 

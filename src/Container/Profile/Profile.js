@@ -9,7 +9,7 @@ import Summary from '../../Components/Userinfo/Summary/Summary';
 
 import classes from './Profile.module.css';
 import Axios from 'axios';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import { Route, Switch, Router } from 'react-router';
 
 import ViewModuleOutlinedIcon from '@material-ui/icons/ViewModuleOutlined';
@@ -18,9 +18,9 @@ import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutline
 
 const profile = React.memo((props) => {
 
-    const [username, setUsername] = useState();
-    const [followers, setFollowers] = useState();
-    const [posts, setPosts] = useState();
+    const [username, setUsername] = useState('');
+    const [followers, setFollowers] = useState('');
+    const [posts, setPosts] = useState('');
     // const [loading, setLoading] = useState(false);
     
     useEffect(() => {
@@ -32,10 +32,14 @@ const profile = React.memo((props) => {
                 setFollowers(response.data.data.followers.length)
                 setPosts(response.data.data.myposts.length);
                 // setLoading(false);
+                console.log(username);
             })
             .catch(err => {
                 console.log(err);
             });
+            
+            
+            document.title = username
     },[props.id, username])
 
 
@@ -43,28 +47,32 @@ const profile = React.memo((props) => {
         <div className={classes.Profile}>
             {/* <Container> */}
             <div className={classes.PhotoandSummary}>
-                <Profilepic imageUrl="https://i.eurosport.com/2020/02/16/2776480-57351610-2560-1440.jpg" />
+                <Profilepic imageUrl="hello" alt={username}/>
                 <Summary username={username} followers={followers} posts={posts}/>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-                <hr style={{color: 'black'}} />
+                {/* <hr style={{color: 'black'}} /> */}
             <div className={classes.UserContent}>
                 <div>
-                    <Link to={"/"+props.id}>
+                    <NavLink exact activeStyle={{color: 'black', borderTop: '1px solid black'}} className={classes.Link}  to={"/"+props.id}>
                         <ViewModuleOutlinedIcon style={{fontWeight: 100}}/>
                     <span>POSTS</span>
-                    </Link>
+                    </NavLink>
                 </div>
                 <div>
-                <Link to={'/'+props.id+"/channel"}>
+                <NavLink exact activeStyle={{color: 'black', borderTop: '1px solid black'}} className={classes.Link} to={'/'+props.id+"/channel"}>
                     <TvOutlinedIcon />
                     <span>IGTV</span>
-                </Link>
+                </NavLink>
                 </div>
                 <div>
-                <Link to="">
+                <NavLink exact activeStyle={{color: 'black', borderTop: '1px solid black'}} className={classes.Link} to="">
                     <BookmarkBorderOutlinedIcon />
                     <span>SAVED</span>
-                </Link>
+                </NavLink>
                 </div>
                 {/* <div>
                     <Link to="">TAGGED</Link>

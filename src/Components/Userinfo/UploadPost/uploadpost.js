@@ -11,7 +11,6 @@ import { AuthContext } from '../../../context/context';
 const uploadpost = React.memo((props) => {
 
     const authContext = useContext(AuthContext);
-    console.log(authContext.userPost)
     const token = authContext.token;
     // const [disablebackdrop, setDisablebackdrop] = useState(false);
     const [uploadtext, setUploadtext] = useState('');
@@ -46,11 +45,16 @@ const uploadpost = React.memo((props) => {
             .catch(err => {
                 console.log(err);
             });
+            setUploadtext('');
+            setFile('');
     }
     
     const goback = (event) => {
         event.preventDefault();
+        props.history.goBack();
     }
+
+    document.title = 'Upload'
 
     return (
         // <div className={classes.Uploadpost}>

@@ -14,9 +14,10 @@ import AccountCircleOutlined from '@material-ui/icons/AccountCircleOutlined';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import CloudUpload from '@material-ui/icons/CloudUpload';
 
-import { Link } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
 import { AuthContext } from '../../context/context'
+
 
 const toolbar = React.memo((props) => {
 
@@ -30,6 +31,7 @@ const toolbar = React.memo((props) => {
     const [explorebutton, setExporebutton] = useState(false);
     const [directbutton, setDirectbutton] = useState(false);
     const [accountbutton, setAccountbutton] = useState(false);
+    
     
     
     let widthinput;
@@ -47,65 +49,57 @@ const toolbar = React.memo((props) => {
         }
     }
 
+    
+
     const homebu = (event) => {
-        if(homebutton === true) {
-            setHomebutton(false);
-        } else {
+        
             setHomebutton(true);
             setActivitybutton(false);
             setExporebutton(false);
             setDirectbutton(false);
             setAccountbutton(false);
-        }
+        
         console.log(homebutton);
     }
 
     const activity = () => {
-        if (activitybutton === true){
-            setActivitybutton(false);
-        } else {
+        
             setActivitybutton(true);
             setHomebutton(false);
             setExporebutton(false);
             setDirectbutton(false);
             setAccountbutton(false);
-        }
+        
     }
 
     const explore = () => {
-        if(explorebutton === true) {
-            setExporebutton(false);
-        } else {
-            setExporebutton(true);
-            setHomebutton(false);
+        
+        setExporebutton(true);
+        setHomebutton(false);
             setActivitybutton(false);
             setDirectbutton(false);
             setAccountbutton(false);
-        }
+        
     }
 
     const direct = () => {
-        if(directbutton === true) {
-            setDirectbutton(false);
-        } else {
-            setDirectbutton(true);
-            setHomebutton(false);
+        
+        setDirectbutton(true);
+        setHomebutton(false);
             setActivitybutton(false);
             setExporebutton(false);
             setAccountbutton(false);
-        }
+        
     }
 
     const account = () => {
-        if(accountbutton === true) {
-            setAccountbutton(false);
-        } else {
-            setAccountbutton(true);
-            setHomebutton(false);
+       
+        setHomebutton(false);
+        setAccountbutton(true);
             setActivitybutton(false);
             setExporebutton(false);
             setDirectbutton(false);
-        }
+        
     }
 
     const disable = (event) => {
@@ -113,32 +107,34 @@ const toolbar = React.memo((props) => {
         setInputstate(false);
     }
 
+    
+
     return (
         <div onClick={disable} className={classes.Toolbar}>
             <div>
-                <Link to="/" className={classes.Instagram}>Instagram</Link>
+                <NavLink to="/" className={classes.Instagram}>Instagram</NavLink>
             </div>
             <div onClick={searche} className={classes.Search}>
                 <SearchRounded />
                 <input style={inputstate ? widthinput: null} type="text" placeholder="Search" />
             </div>
             <div className={classes.MenuIcon}>
-                <Link to="/">{homebutton ?<Home onClick={homebu} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} />: 
-                    <HomeOutlined onClick={homebu} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</Link>
+                <NavLink onClick={homebu} to="/">{homebutton ?<Home  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} />: 
+                    <HomeOutlined  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</NavLink>
 
-                <Link to="/direct">{directbutton === false ?<SendOutlined onClick={direct} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} />: 
-                    <Send onClick={direct} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</Link>
+                <NavLink onClick={direct} to="/direct/messages">{directbutton === false ?<SendOutlined  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} />: 
+                    <Send  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</NavLink>
 
-                <Link to="/activity">{activitybutton === false ?<FavoriteBorder onClick={activity} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>: 
-                    <Favorite onClick={activity} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</Link>
+                <NavLink onClick={activity} to="/activity/notifications">{activitybutton === false ?<FavoriteBorder  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>: 
+                    <Favorite  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</NavLink>
 
-                <Link to="/explore">{explorebutton === false ? <ExploreOutlined onClick={explore} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} />: 
-                    <Explore onClick={explore} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</Link>
+                <NavLink  to="/explore/instagram">{explorebutton === false ? <ExploreOutlined onClick={explore} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} />: 
+                    <Explore onClick={explore} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</NavLink>
 
-                <Link to={"/"+username}>{accountbutton === false ? <AccountCircleOutlined onClick={account} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} />: 
-                                    <AccountCircle onClick={account} style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</Link>
+                <NavLink onClick={account} to={"/"+username}>{accountbutton === false ? <AccountCircleOutlined  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} />: 
+                                    <AccountCircle  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}}/>}</NavLink>
 
-                <Link to="/upload" ><CloudUpload  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} /></Link>
+                <NavLink to={"/"+username+"/upload"} ><CloudUpload  style={{color: 'black', fontSize: 30, marginLeft: '0.5rem', marginRight: '0.5rem'}} /></NavLink>
 
 
             </div>

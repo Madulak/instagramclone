@@ -4,23 +4,47 @@
     align-items: center;
     margin: auto;
     height: 100%;
+    padding: 2rem 0
 }
 
 .Profile .PhotoandSummary {
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    
 }
 
 .Profile .UserContent {
     display: flex;
     justify-content: center;
-    margin: 0 5px;
+    margin: 2rem 5px;
+    border-top: 1px solid grey;
 }
 
-.Profile .UserContent Link {
+.Profile .UserContent .Link {
     text-decoration: none;
+    color: grey;
+    margin: 0 1.5rem;
+}
+
+.Profile .UserContent div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Profile .UserContent .Link {
+    color: grey;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    
+}
+
+.Profile .UserContent div span {
+    margin: auto;
 }
 
 .Profile .UserMedia {
