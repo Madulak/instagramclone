@@ -1,5 +1,6 @@
 .Uploadpost {
     text-decoration: none;
+    
 }
 
 .UploadpostContent {
@@ -7,8 +8,10 @@
     padding: 1.5rem;
 }
 
-.UploadpostContent .Form {
-    
+.UploadpostContent .Form .Buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .UploadpostContent .Form input {

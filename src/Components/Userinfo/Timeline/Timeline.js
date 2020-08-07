@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState, useRef } from 'react';
+import React, { useEffect, useContext, useState, useRef  } from 'react';
 import classes from './Timeline.module.css';
 
 import SendOutlined from '@material-ui/icons/SendOutlined';
@@ -6,6 +6,7 @@ import FavoriteBorderOutlined from '@material-ui/icons/FavoriteBorderOutlined';
 import CommentOutlined from '@material-ui/icons/CommentOutlined';
 
 import Container from '../../../Container/Container';
+
 import Axios from 'axios';
 import { AuthContext } from '../../../context/context';
 
@@ -14,6 +15,7 @@ const timeline = React.memo((props) => {
     const authContext = useContext(AuthContext);
     const userId = authContext.username;
     const token = authContext.token;
+    const error = authContext.error;
 
     const [data, setData] = useState([]);
     const [comment, setComment] = useState('');
@@ -22,6 +24,7 @@ const timeline = React.memo((props) => {
     revealRefs.current = [];
 
     useEffect(() => {
+
         if(userId !== null) {
             Axios.get('http://localhost:8080/timeline/'+userId)
             .then(response => {
@@ -32,7 +35,7 @@ const timeline = React.memo((props) => {
                 console.log(err);
             });
             
-        }
+        } 
         document.title = 'Instagram Clone'
         
     },[userId]);
@@ -127,9 +130,10 @@ const timeline = React.memo((props) => {
                                 </form>
                             </div>
                         </div>
-                    </div>
-                ))}
-                
+                        
+                        </div>
+                        
+                        ))}
             </div>
             
         </Container>

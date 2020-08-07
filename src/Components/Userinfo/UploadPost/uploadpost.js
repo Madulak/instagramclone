@@ -8,6 +8,9 @@ import Axios from 'axios';
 
 import { AuthContext } from '../../../context/context';
 
+import ImageUploader from 'react-images-upload';
+
+
 const uploadpost = React.memo((props) => {
 
     const authContext = useContext(AuthContext);
@@ -20,10 +23,11 @@ const uploadpost = React.memo((props) => {
         setUploadtext(event.target.value);
     }
 
-    const fileInputhandler = (event) => {
-        event.preventDefault();
-        setFile(event.target.files[0]);
+    const fileInputhandler = (filed) => {
+        setFile(filed[0]);
     }
+
+    console.log(file[0]);
 
     const postUploadHandler = (event) => {
         event.preventDefault();
@@ -66,9 +70,14 @@ const uploadpost = React.memo((props) => {
                             <div className={classes.Form}>
                                 <form onSubmit={postUploadHandler} >
                                     <input type="text" placeholder="What's in your Mind? " value={uploadtext} onChange={textInputhandler} />
-                                    <input type="file" onChange={fileInputhandler}  />
-                                    <button type="submit">upload</button>
-                                    <button onClick={goback}>cancel</button>
+                                    <ImageUploader onChange={fileInputhandler} withPreview={true} singleImage={true} buttonStyles={{backgroundColor: 'purple'}}
+                                        fileContainerStyle={{backgroundColor: 'transparent', margin: 0, padding: 0}}
+                                        
+                                        buttonText='Choose Image' ></ImageUploader>
+                                    <div className={classes.Buttons}>
+                                        <button type="submit">upload</button>
+                                        <button onClick={goback}>Done</button>
+                                    </div>
                                 </form>
                             </div>
                             

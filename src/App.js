@@ -29,6 +29,7 @@ const App = () => {
       <Switch>
           {isAuth ? <Fragment>
             {/* <Container> */}
+            
               <Route exact path="/explore/instagram" component={Explore} />
               <Route exact path="/direct/messages" component={Message} />
               <Route exact path="/activity/notifications" component={Notification} />
@@ -37,6 +38,7 @@ const App = () => {
               <Route exact path="/" component={Timeline} />
               <Route exact path="/:id/upload" component={Upload} />
               <Route exact path="/post/:id" component={Detailedpost} />
+              
             {/* </Container> */}
           </Fragment> : 
             <Fragment>

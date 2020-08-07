@@ -6,6 +6,7 @@ export const AuthContext = React.createContext({
     token: null,
     username: null,
     userId: null,
+    error: null,
     login: () => {},
     signup: () => {},
     logout: () => {}
@@ -16,6 +17,7 @@ const AuthContextProvider = props => {
     const [token, setToken] = useState(null);
     const [username, setUsername] = useState(null);
     const [userId, setUserId] = useState(null);
+    const [error, setError] = useState(null);
 
     const loginHandler = (auth) => {
 
@@ -29,9 +31,11 @@ const AuthContextProvider = props => {
                 setToken(response.data.token);
                 setUsername(response.data.username);
                 setUserId(response.data.userId);
+                
             })
             .catch(err => {
                 console.log(err);
+                setError(err);
             });
             setIsAuthenticated(true);
     }
@@ -59,6 +63,7 @@ const AuthContextProvider = props => {
             login: loginHandler,
             signup: signupHandler,
             token: token,
+            error: error,
             username: username,
             userId: userId,
             logout: logoutHandler

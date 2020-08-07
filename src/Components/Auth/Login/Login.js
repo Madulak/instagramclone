@@ -22,8 +22,10 @@ const auth = React.memo((props) => {
         }
         setUseremail('');
         setPassword('');
-        props.history.push('/')
+        props.history.push('/');
     }
+
+    
 
     document.title =  'Login Instagram Clone'
 
