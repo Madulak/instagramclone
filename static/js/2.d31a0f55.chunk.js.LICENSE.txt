@@ -4,6 +4,33 @@ object-assign
 @license MIT
 */
 
+/*!
+     *  TERMS OF USE - EASING EQUATIONS
+     *  Open source under the BSD License.
+     *  Easing Equations (c) 2003 Robert Penner, all rights reserved.
+     */
+
+/*!
+     * All equations are adapted from Thomas Fuchs'
+     * [Scripty2](https://github.com/madrobby/scripty2/blob/master/src/effects/transitions/penner.js).
+     *
+     * Based on Easing Equations (c) 2003 [Robert
+     * Penner](http://www.robertpenner.com/), all rights reserved. This work is
+     * [subject to terms](http://www.robertpenner.com/easing_terms_of_use.html).
+     */
+
+/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+/*! Shifty 2.9.2 - https://github.com/jeremyckahn/shifty */
+
+/**
+ * @preserve date-and-time.js (c) KNOWLEDGECODE | MIT
+ */
+
 /**
  * A better abstraction over CSS.
  *
