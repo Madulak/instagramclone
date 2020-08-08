@@ -61,6 +61,11 @@
     width: 10%;
 }
 
+.TimelinePost .PostText {
+    padding: 0rem 1rem;
+    
+}
+
 .TimelinePost .Reactions {
     padding: 0rem 1rem;
     display: flex;

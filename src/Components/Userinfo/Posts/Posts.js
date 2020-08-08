@@ -13,7 +13,7 @@ const posts = React.memo((props) => {
     const [userpost, setUserpost] = useState([]);
     
     useEffect(() => {
-        Axios.get('http://localhost:8080/user/'+id)
+        Axios.get('https://madula.herokuapp.com/user/'+id)
             .then(response => {
                 setUserpost(response.data.data.myposts);
             })
@@ -30,7 +30,7 @@ const posts = React.memo((props) => {
                     {userpost.map(ig => (
                         <Link key={ig._id} to={"/post/"+ig._id}>
                             <div  className={classes.Mypost}>
-                                <img className={classes.Image} src={"http://localhost:8080/"+ig.mediaUrl} alt={ig.postText} />
+                                <img className={classes.Image} src={"https://madula.herokuapp.com/"+ig.mediaUrl} alt={ig.postText} />
                             </div>
                         </Link>
                     ))}

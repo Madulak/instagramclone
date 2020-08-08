@@ -27,7 +27,7 @@ const uploadpost = React.memo((props) => {
         setFile(filed[0]);
     }
 
-    console.log(file[0]);
+    console.log(file);
 
     const postUploadHandler = (event) => {
         event.preventDefault();
@@ -37,12 +37,13 @@ const uploadpost = React.memo((props) => {
 
         const config = {
             headers: {
+                
                 Authorization: 'Bearer '+token,
                 'content-type': 'multipart/form-data'
             }
         }
 
-        Axios.post('http://localhost:8080/createpost', formData, config )
+        Axios.post('https://madula.herokuapp.com/createpost', formData, config )
             .then(response => {
                 console.log(response);
             })
@@ -60,8 +61,8 @@ const uploadpost = React.memo((props) => {
 
     document.title = 'Upload'
 
-    return (
-        // <div className={classes.Uploadpost}>
+        return (
+            // <div className={classes.Uploadpost}>
             <Container>
                 <Backdrop>
                     <Modal>
@@ -84,8 +85,8 @@ const uploadpost = React.memo((props) => {
                         </div>
                     </Modal>
                 </Backdrop>
-            </Container>
-        /* </div> */
+                </Container>
+            /* </div> */
     );
 });
 

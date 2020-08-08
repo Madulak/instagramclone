@@ -34,10 +34,11 @@ const auth = React.memo((props) => {
             <div className={classes.FormContainer}>
                 <form onSubmit={loginHandler}>
                     <h3 className={classes.text}>Instagram Login</h3>
-                    <input type="text" placeholder="email or username" value={useremail} onChange={(event) => setUseremail(event.target.value)} />
+                    <input type="text" placeholder="email" value={useremail} onChange={(event) => setUseremail(event.target.value)} />
                     <input type="password" placeholder="password" value={password} onChange={(event) => setPassword(event.target.value)}/>
                     <button type="submit">submit</button>
                 </form>
+                <p>For testing please use <strong>test@test.com</strong> as email and <strong>12345</strong> as password</p>
             </div>
             <div>
                 <p>Do not have Account? <Link to="/signup">Sign up</Link></p>

@@ -21,7 +21,7 @@ const AuthContextProvider = props => {
 
     const loginHandler = (auth) => {
 
-        Axios.post('http://localhost:8080/login', auth)
+        Axios.post('https://madula.herokuapp.com/login', auth)
             .then(response => {
                 console.log(response);
                 localStorage.setItem('token', response.data.token);
@@ -42,7 +42,7 @@ const AuthContextProvider = props => {
 
     const signupHandler = (auth) => {
 
-        Axios.post('http://localhost:8080/signup', auth)
+        Axios.post('https://madula.herokuapp.com/signup', auth)
             .then(response => {
                 console.log(response);
             })

@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classes from './Summary.module.css';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../context/context';
 
 const summary = React.memo((props) => {
 
-    const authContext = useContext(AuthContext);
 
     return (
         <div className={classes.Summary}>
@@ -13,9 +10,7 @@ const summary = React.memo((props) => {
                 <div>
                     <p className={classes.Usernametext}> {props.username} </p>
                 </div>
-                <div>
-                    <Link to={`/${authContext.username}/edit`} >Edit Profile</Link>
-                </div>
+                
             </div>
             <div className={classes.Post}>
                 <p>{props.posts} posts</p>

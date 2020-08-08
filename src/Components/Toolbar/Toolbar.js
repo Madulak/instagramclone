@@ -112,7 +112,7 @@ const toolbar = React.memo((props) => {
     return (
         <div onClick={disable} className={classes.Toolbar}>
             <div>
-                <NavLink to="/" className={classes.Instagram}>Instagram</NavLink>
+                <NavLink to="/" className={classes.Instagram}>Instagram-clone</NavLink>
             </div>
             <div onClick={searche} className={classes.Search}>
                 <SearchRounded />

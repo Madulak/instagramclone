@@ -25,7 +25,7 @@ const profile = React.memo((props) => {
     
     useEffect(() => {
         // setLoading(true);
-        Axios.get('http://localhost:8080/user/'+props.id)
+        Axios.get('https://madula.herokuapp.com/user/'+props.id)
             .then(response => {
                 console.log(response.data.data);
                 setUsername(response.data.data.username);
